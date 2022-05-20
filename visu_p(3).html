@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style_p.css">
+    <title></title>
+  </head>
+  <body>
+    <div id= "article" onclick="myFunction ();">
+      <div id= "word1" onClick="word(1);">휘	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	                휘	이	이	이	이	이	이	   </div>
+      <div id= "word2" onClick="word(2);">		삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑							 삑	삑	삑	삑	삑	삑				삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑								</div>
+      <div id= "word3" onClick="word(3);">		 								깍		     		깍	깍깍					깍				깍								깍	깍	깍					깍깍깍	깍			깍	깍	</div>
+      <div id= "word4">		 								짹					짹짹짹짹	짹		짹짹																																						</div>
+      <div id= "word5">		 									 		삐	리리리리					삐리리리리	삐리리리리	삐리리리리	삐리리리리	삐리리리  삐	리리리리					삐리리리리	삐리리리리	삐리리리리	삐리리리리	삐리리리	</div>
+      <div id= "word6">			찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르	찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르			</div>
+      <div id= "word7">휘	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	이	                휘	이	이	이	이	이	이	   </div>
+      <div id= "word8">		삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑							 삑	삑	삑	삑	삑	삑				삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑삑	삑	삑	삑	 삑	삑	삑	삑		 삑	삑	삑	삑	삑	삑								</div>
+      <div id= "word9">		 							깍		     		깍	깍깍					깍				깍								깍	깍	깍					깍깍깍	깍			깍	깍	</div>
+      <div id= "word10">		 			짹				짹짹짹짹	짹		짹짹													짹				짹짹짹짹	짹		짹짹																								</div>
+      <div id= "word11">		 					삐	리리리리					삐리리리리	삐리리리리	삐리리리리	삐리리리리	삐리리리  삐	리리리리					삐리리리리	삐리리리리	삐리리리리	삐리리리리	삐리리리	</div>
+      <div id= "word12">			찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르				찌	르	르	르	르	찌	르	르	르	르				찌	르
+    </div>
+    <script>
+      function myFunction() {
+        document.getElementById("word1").style.textDecoration = "line-through";
+        document.getElementById("word1").style.textDecorationThickness = "50px";
+        document.getElementById("word1").style.color = "#81F7BE";
+        document.getElementById("word2").style.textDecoration = "line-through";
+        document.getElementById("word2").style.textDecorationThickness = "50px";
+        document.getElementById("word2").style.color = "#80FF00";
+        document.getElementById("word3").style.textDecoration = "line-through";
+        document.getElementById("word3").style.textDecorationThickness = "50px";
+        document.getElementById("word3").style.color = "#FFFF00";
+        document.getElementById("word4").style.textDecoration = "line-through";
+        document.getElementById("word4").style.textDecorationThickness = "50px";
+        document.getElementById("word4").style.color = "#3ADF50";
+        document.getElementById("word5").style.textDecoration = "line-through";
+        document.getElementById("word5").style.textDecorationThickness = "50px";
+        document.getElementById("word5").style.color = "#04B45F";
+        document.getElementById("word6").style.textDecoration = "line-through";
+        document.getElementById("word6").style.textDecorationThickness = "50px";
+        document.getElementById("word6").style.color = "#9FF781";
+        document.getElementById("word7").style.textDecoration = "line-through";
+        document.getElementById("word7").style.textDecorationThickness = "50px";
+        document.getElementById("word7").style.color = "#81F7BE";
+        document.getElementById("word8").style.textDecoration = "line-through";
+        document.getElementById("word8").style.textDecorationThickness = "50px";
+        document.getElementById("word8").style.color = "#80FF00";
+        document.getElementById("word9").style.textDecoration = "line-through";
+        document.getElementById("word9").style.textDecorationThickness = "50px";
+        document.getElementById("word9").style.color = "#FFFF00";
+        document.getElementById("word10").style.textDecoration = "line-through";
+        document.getElementById("word10").style.textDecorationThickness = "50px";
+        document.getElementById("word10").style.color = "#3ADF50";
+        document.getElementById("word11").style.textDecoration = "line-through";
+        document.getElementById("word11").style.textDecorationThickness = "50px";
+        document.getElementById("word11").style.color = "#04B45F";
+        document.getElementById("word12").style.textDecoration = "line-through";
+        document.getElementById("word12").style.textDecorationThickness = "50px";
+        document.getElementById("word12").style.color = "#9FF781";
+      }
+    </script>
+    <script src="sketch_p.js"></script>
+  </body>
+</html>
