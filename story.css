@@ -1,0 +1,62 @@
+html {
+    display: block !important;/* 확대시 flex 하지 않도록 설정 */
+    white-space: nowrap;/* 글씨 flexible 하지 않도록 설정 */
+    color: black;
+}
+
+body {
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    margin-top: 10%;
+    margin-left: 10%;
+    overflow: hidden;
+    font-size: 50px;
+    font-weight: bold;
+    writing-mode: horizontal-tb; 
+}        
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    background-color: black;
+    opacity: 0; 
+}
+
+.glyph {
+    color:#fd0000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;  
+    line-height: 100px;  
+}
+
+.clicktext {
+    color:#212121;
+    -webkit-animation: fade 1s;
+    animation-name: flash;
+    animation: fade 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate; 
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+    }
+    }
+
+    @keyframes fade {
+    0% {
+        opacity: .25;
+    }
+    100% {
+        opacity: 1;
+    }
+    }

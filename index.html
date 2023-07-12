@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="story.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <script src="storyTree2.json" type="text/javascript"></script>
+        <title>보이지 않는</title>
+        <script>
+            let jsonData = JSON.parse(JSON.stringify(TestFile));
+            //console.log(jsonData);
+            //console.log(jsonData.storyTree);
+
+            // 특정 number의 문장 불러오는 함수
+            function showSentence (number) {
+                for (let k=0; k<jsonData.storyTree.length; k++) {
+                    if (jsonData.storyTree[k]['number']==number) {
+                        
+                        let switchStr = "<font class='clicktext'>"+jsonData.storyTree[k]['click']+"</font>"; // 선택할 텍스트
+
+                        if (jsonData.storyTree[k]['dest'].length==1) { // 최종 목적지dest가 1개면
+                            switchStr = "<a href='#' onClick=\"showSentence('" + jsonData.storyTree[k]['dest'][0] + "')\">" + switchStr + "</a>"; // 무조건0번 dest로
+                        } else { // dest가 2개 이상이면
+                            let randNum = parseInt(Math.random()*jsonData.storyTree[k]['dest'].length); /// 랜덤하게 n개중 하나 선택
+                            switchStr = "<a href='#' onClick=\"showSentence('" + jsonData.storyTree[k]['dest'][randNum] + "')\">" + switchStr + "</a>"; // 랜덤 넘버dest로 이동
+                        }
+                        // str은 기본 문장에 $$$$를 선택click텍스트로 교체하는 코드
+
+                        let str = jsonData.storyTree[k]['text'].replace('$$$$', switchStr);
+                        
+                        let glyphList = new Array('&#40;', '&#34;', '&#34; ', '&#123;', '&#41;', '&#58;', '&#91;', '&#93; &#91;', '&#93;', '&#93; ', '&#123;', '&#125;', '&#93; &#91;');
+                        for (let jj=0; jj<glyphList.length; jj++) {
+                            str = str.replace(glyphList[jj], '<font class="glyph">'+glyphList[jj]+'</font>');
+                        }
+
+                        if (jsonData.storyTree[k]['bg']) {
+                            document.body.style.backgroundColor = jsonData.storyTree[k]['bg'];
+                        } else {
+                            document.body.style.backgroundColor = "#black";
+                        }
+                        /* 
+                        str = str.replace(' &#40;', '<font class="glyph"> &#40;</font>');
+                        str = str.replace('&#40;&#123;', '<font class="glyph">&#40;&#123;</font>');
+                        str = str.replace(' &#40;&#123;', '<font class="glyph"> &#40;&#123;</font>');
+                        str = str.replace('&#41;', '<font class="glyph">&#41;</font>');
+                        str = str.replace('&#58;', '<font class="glyph">&#58;</font>');
+                        str = str.replace('&#91;', '<font class="glyph">&#91;</font>');
+                        str = str.replace('&#93;', '<font class="glyph">&#93;</font>');
+                        str = str.replace('&#123;', '<font class="glyph">&#123;</font>');
+                        str = str.replace('&#125;', '<font class="glyph">&#125;</font>'); */
+                        /*
+                        let str = jsonData.storyTree[k]['text'].replace('$$$$', switchStr);
+                        str = str.replace('장님안마사', '<font class="glyph">&#40;</font>'); */
+
+
+                        // 콘솔에 확인
+                        //console.log(str);
+                        
+                        
+
+                        // div중 innertext라는 id의 div를 찾아서 안쪽 html코드를 교체
+                        document.getElementById('innertext').innerHTML = str;
+                        break;
+                    }
+                }
+
+            }
+
+
+
+            function playSound() { // playSound 함수 생성
+                var sound = document.getElementById("clickSound"); // clickSound id를 가진 audio 태그를 변수에 할당
+                sound.play(); // 변수에 할당된 audio 태그를 재생
+            }
+            document.addEventListener("click", playSound); // 문서 전체를 클릭 시 playSound 함수 호출
+        </script>
+    </head>
+    <body>
+
+        <div id="innertext"></div>
+        
+        <button onclick="playSound()"></button> <!-- 버튼 생성 및 클릭 시 playSound 함수 호출 -->
+        <audio id="clickSound" src="카메라셔터.m4a"></audio> <!-- audio 태그를 이용하여 소리 파일 경로 지정 -->
+
+        <script>
+            showSentence ('a0_0');
+
+
+            const zoomElement = document.querySelector("#innertext");
+            let zoom = 1;
+            const ZOOM_SPEED = 0.1;
+
+            document.addEventListener("wheel", function (e) {
+            if (e.deltaY > 0) {
+                zoomElement.style.transform = `scale(${(zoom += ZOOM_SPEED)})`;
+            } else {
+                zoomElement.style.transform = `scale(${(zoom -= ZOOM_SPEED)})`;
+            }
+            });
+        </script>
+
+<!--         <script>
+            // 언어 배열 생성
+            var languages = ["한국어", "영어", "일본어", "중국어"];
+            
+            // 언어 변경 함수 생성
+            function changeLanguage() {
+                // 랜덤한 언어 선택
+                var randomLanguage = languages[Math.floor(Math.random() * languages.length)];
+                // 선택된 언어를 경고창으로 출력
+                alert("현재 언어: " + randomLanguage);
+            }
+            
+            // 문서 전체를 클릭 시 changeLanguage 함수 호출
+            document.addEventListener("click", changeLanguage);
+        </script>  -->
+    </body>
+</html>
