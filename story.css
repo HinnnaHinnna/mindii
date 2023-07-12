@@ -60,3 +60,14 @@ button {
         opacity: 1;
     }
     }
+
+    ::-moz-selection{
+      background: #ffffff;
+      color: #000000;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
+    ::selection{
+      background: #ffffff;
+      color: #000000;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
