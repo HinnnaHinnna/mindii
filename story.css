@@ -2,6 +2,7 @@ html {
     display: block !important;/* 확대시 flex 하지 않도록 설정 */
     white-space: nowrap;/* 글씨 flexible 하지 않도록 설정 */
     color: black;
+    -webkit-tap-highlight-color: <white>;
 }
 
 body {
@@ -72,4 +73,3 @@ button {
       text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     }
 
-* { -webkit-tap-highlight-color: <white>; }
