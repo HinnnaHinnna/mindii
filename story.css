@@ -2,7 +2,7 @@ html {
     display: block !important;/* 확대시 flex 하지 않도록 설정 */
     white-space: nowrap;/* 글씨 flexible 하지 않도록 설정 */
     color: black;
-    -webkit-tap-highlight-color: <white>;
+    -webkit-tap-highlight-color: rgba(50,50,50,0.3);
 }
 
 body {
