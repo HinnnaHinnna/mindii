@@ -1,31 +1,36 @@
-html {
-    display: block !important;/* 확대시 flex 하지 않도록 설정 */
-    white-space: nowrap;/* 글씨 flexible 하지 않도록 설정 */
-    color: black;
-    -webkit-tap-highlight-color: rgba(50,50,50,0.3);
-}
-
 body {
-    position: fixed;
-    width: 50%;
-    height: 50%;
-    margin-top: 10%;
-    margin-left: 10%;
-    overflow: hidden;
-    font-size: 50px;
-    font-weight: bold;
-    writing-mode: horizontal-tb; 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 20;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  font-weight: bold;
+  writing-mode: horizontal-tb;
+  cursor: zoom-in; /* Set initial cursor to zoom-in */
 }        
 
+/* Remove text decoration for links */
 a:link {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
+/* Hide buttons visually (opacity: 0) */
 button {
-    background-color: black;
-    opacity: 0; 
+  background-color: black;
+  opacity: 0;
 }
+
 
 .glyph {
     color:#fd0000;
@@ -65,9 +70,10 @@ button {
     ::-moz-selection{
       background: #ffffff;
       color: #000000;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     }
     ::selection{
       background: #ffffff;
       color: #000000;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     }
-
