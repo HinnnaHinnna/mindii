@@ -68,13 +68,12 @@ button {
     }
 
 ::selection {
-  background: white;
-  color: black;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background: #ffffff !important;
+  color: #000000 !important;
 }
 
 ::-moz-selection {
-  background: white;
-  color: black;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background: #ffffff !important;
+  color: #000000 !important;
 }
+
