@@ -68,12 +68,12 @@ button {
     }
 
 ::selection {
-  background: #ffffff !important;
+  background: white !important;
   color: #000000 !important;
 }
 
 ::-moz-selection {
-  background: #ffffff !important;
+  background: white !important;
   color: #000000 !important;
 }
 
