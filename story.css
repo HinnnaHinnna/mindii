@@ -17,11 +17,7 @@ body {
   font-weight: bold;
   writing-mode: horizontal-tb;
   cursor: zoom-in; /* Set initial cursor to zoom-in */
-  -webkit-user-select: none; /* 사파리 등 웹킷 기반 브라우저에서 선택 차단 */
-  -moz-user-select: none;    /* 파이어폭스에서 선택 차단 */
-  -ms-user-select: none;     /* IE/Edge 구버전에서 선택 차단 */
-  user-select: none;         /* 표준 */
-  -webkit-touch-callout: none; /* iOS에서 터치 시 팝업 메뉴 방지 */
+  touch-action: manipulation; /* 터치 인터랙션 최소화 시도 */
 }        
 
 /* Remove text decoration for links */
