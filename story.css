@@ -77,8 +77,4 @@ button {
   color: #000000 !important;
 }
 
-@media (max-width: 768px) {
-  body {
-    display: none;
-  }
-}
+
